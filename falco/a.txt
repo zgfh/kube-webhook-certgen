@@ -1,0 +1,14 @@
+Tue Feb  2 23:27:29 2021: Falco version 0.26.2 (driver version 2aa88dcf6243982697811df4c1b484bcbe9488a2)
+Tue Feb  2 23:27:29 2021: Falco initialized with configuration file /etc/falco/falco.yaml
+Tue Feb  2 23:27:29 2021: Loading rules from file /etc/falco/falco_rules.local.yaml:
+Tue Feb  2 23:27:29 2021: Starting internal webserver, listening on port 8765
+Tue Feb  2 23:27:36 2021: Falco version 0.26.2 (driver version 2aa88dcf6243982697811df4c1b484bcbe9488a2)
+Tue Feb  2 23:27:36 2021: Falco initialized with configuration file /etc/falco/falco.yaml
+Tue Feb  2 23:27:36 2021: Loading rules from file /etc/falco/falco_rules.local.yaml:
+Tue Feb  2 23:27:36 2021: Starting internal webserver, listening on port 8765
+23:27:40.559294443: Warning |root 76c2dd2ec8eb runc
+23:27:41.539566820: Warning |root 76c2dd2ec8eb runc
+Tue Feb  2 23:30:38 2021: Falco version 0.26.2 (driver version 2aa88dcf6243982697811df4c1b484bcbe9488a2)
+Tue Feb  2 23:30:38 2021: Falco initialized with configuration file /etc/falco/falco.yaml
+Tue Feb  2 23:30:38 2021: Loading rules from file /etc/falco/falco_rules.local.yaml:
+Tue Feb  2 23:30:38 2021: Starting internal webserver, listening on port 8765

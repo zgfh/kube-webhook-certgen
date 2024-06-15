@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  acme-dns:
+    image: harbor.ats.io/docker.io/joohoi/acme-dns
+    ports:
+      - 53:53
+      - 53:53/udp
+      - 9001:80
+    volumes:
+      - ./data:/var/lib/acme-dns
+      - ./config:/etc/acme-dns

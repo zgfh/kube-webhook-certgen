@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  step_ca:
+    image: harbor.ats.io/docker.io/smallstep/step-ca:0.19.0
+    user: root
+    ports:
+      - 9000:9000
+    restart: always
+    environment:
+      - STEPDEBUG=1 #  为1 开启debug 日志
+      - DOCKER_STEPCA_INIT_PROVISIONER_NAME=DaoCloud-ETC # 提供者名称
+      - DOCKER_STEPCA_INIT_NAME=DaoCloud # CA 名
+      - DOCKER_STEPCA_INIT_DNS_NAMES=127.0.0.1,*.zzg.ats.io,*.ats.io,step_ca # ca http服务接受的dns 和ip
+      - DOCKER_STEPCA_INIT_PASSWORD=p786yfw8kbdnYtCF2kEGMJOPkxigkMumrAUFX7eN # ca的密码,要严格保存，不设置会自动生成
+    volumes:
+      - ./data:/home/step

@@ -1,0 +1,10 @@
+falcosidekick:
+ image: falcosecurity/falcosidekick
+ ports:
+  - 2801:2801
+ environment:
+  WEBUI_URL: http://10.23.2.11:2802 
+falcosidekick-ui:
+ image: falcosecurity/falcosidekick-ui
+ ports:
+  - 2802:2802
