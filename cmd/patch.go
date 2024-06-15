@@ -6,7 +6,7 @@ import (
 	"github.com/jet/kube-webhook-certgen/pkg/k8s"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	admissionv1beta1 "k8s.io/api/admissionregistration/v1beta1"
+	admissionv1 "k8s.io/api/admissionregistration/v1"
 )
 
 var (
@@ -29,7 +29,7 @@ func prePatchCommand(cmd *cobra.Command, args []string) {
 		break
 	case "Ignore":
 	case "Fail":
-		failurePolicy = admissionv1beta1.FailurePolicyType(cfg.patchFailurePolicy)
+		failurePolicy = admissionv1.FailurePolicyType(cfg.patchFailurePolicy)
 		break
 	default:
 		log.Fatalf("patch-failure-policy %s is not valid", cfg.patchFailurePolicy)
@@ -53,7 +53,7 @@ func init() {
 	patch.Flags().StringVar(&cfg.secretName, "secret-name", "", "Name of the secret where certificate information will be read from")
 	patch.Flags().StringVar(&cfg.namespace, "namespace", "", "Namespace of the secret where certificate information will be read from")
 	patch.Flags().StringVar(&cfg.webhookName, "webhook-name", "", "Name of validatingwebhookconfiguration and mutatingwebhookconfiguration that will be updated")
-	patch.Flags().BoolVar(&cfg.patchValidating, "patch-validating", true, "If true, patch validatingwebhookconfiguration")
+	patch.Flags().BoolVar(&cfg.patchValidating, "patch-validating", false, "If true, patch validatingwebhookconfiguration")
 	patch.Flags().BoolVar(&cfg.patchMutating, "patch-mutating", true, "If true, patch mutatingwebhookconfiguration")
 	patch.Flags().StringVar(&cfg.patchFailurePolicy, "patch-failure-policy", "", "If set, patch the webhooks with this failure policy. Valid options are Ignore or Fail")
 	patch.MarkFlagRequired("secret-name")
